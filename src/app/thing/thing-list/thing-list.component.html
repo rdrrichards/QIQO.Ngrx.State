@@ -1,0 +1,8 @@
+<p>
+  List of Things:
+</p>
+<div *ngFor="let thing of things">
+  <app-thing [thing]="thing" (delete)="delThing($event)"></app-thing>
+</div>
+
+<button (click)="addThing()">Add</button>
