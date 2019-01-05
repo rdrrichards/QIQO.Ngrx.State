@@ -45,9 +45,21 @@ export class ShowListComponent implements OnInit {
   dragDrop(event: DragEvent, episode: Episode, index: number) {
     console.log('dragDrop event:episode:index', event, episode, index);
     // let dropIndex = (this.draggedItemIndex > index) ? index : (index === 0) ? 0 : index - 1;
-    // ObjectUtils.reorderArray(this.value, this.draggedItemIndex, dropIndex);
+    this.reorderArray(this.episodes, this.draggedItemIndex, index);
     this.dragOverItemIndex = null;
     // this.onReorder.emit(event);
     event.preventDefault();
+  }
+  reorderArray(value: any[], from: number, to: number) {
+    let target: number;
+    if (value && (from !== to)) {
+        if (to >= value.length) {
+            target = to - value.length;
+            while ((target--) + 1) {
+                value.push(undefined);
+            }
+        }
+        value.splice(to, 0, value.splice(from, 1)[0]);
+    }
   }
 }
