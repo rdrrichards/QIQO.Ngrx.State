@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { Thing } from 'src/app/models/thing';
 import * as appStuff from '../../state/app.reducer';
 import * as appActions from '../../state/app.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-thing-shell',
@@ -13,7 +14,7 @@ import * as appActions from '../../state/app.actions';
 })
 export class ThingShellComponent implements OnInit {
   things$: Observable<Thing[]>;
-  constructor(private appStore: Store<AppState>) { }
+  constructor(private appStore: Store<AppState>, private router: Router) { }
 
   ngOnInit() {
     this.appStore.select('appState').subscribe((es: AppState) => {
@@ -26,9 +27,12 @@ export class ThingShellComponent implements OnInit {
   addThing() {
     console.log('Adding new thing');
     const newId = new Date().toISOString();
-    this.appStore.dispatch(new appActions.AddThing( { thing: { id: newId, name: 'New Thing' }}));
+    this.appStore.dispatch(new appActions.AddThing( { thing: { id: newId, name: `New Thing: ${newId}` }}));
   }
   delThing(thing: Thing) {
     this.appStore.dispatch(new appActions.DeleteThing({ id: thing.id }));
+  }
+  viewShows() {
+    this.router.navigate(['/shows']);
   }
 }
