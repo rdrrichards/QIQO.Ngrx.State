@@ -10,6 +10,7 @@ export class ShowListComponent implements OnInit {
   episodes: Episode[] = [];
   draggedItemIndex: number;
   dragOverItemIndex: number;
+  dragging = false;
   constructor() { }
 
   ngOnInit() {
@@ -31,13 +32,18 @@ export class ShowListComponent implements OnInit {
   dragStart(event: DragEvent, episode: Episode, index: number) {
     console.log('dragStart event:episode:index', event, episode, index);
     this.draggedItemIndex = index;
+    this.dragging = true;
   }
   dragEnd(event: DragEvent) {
-    console.log('dragEnd event', event);
+    // console.log('dragEnd event', event);
+    this.dragging = false;
   }
   onDragEnter(event: DragEvent, index: number) {
     // console.log('onDragOver event:index', event, index);
-    this.dragOverItemIndex = index;
+    if (this.dragging && this.draggedItemIndex !== index && this.draggedItemIndex + 1 !== index) {
+      this.dragOverItemIndex = index;
+      event.preventDefault();
+    }
   }
   dragLeave(event: DragEvent) {
     this.dragOverItemIndex = null;
