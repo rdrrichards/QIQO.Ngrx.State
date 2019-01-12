@@ -1,3 +1,10 @@
 <p>
   {{episodeInfo}}
 </p>
+<div [formGroup]="form">
+  <div formArrayName="options">
+    <div *ngFor="let opt of options" >
+      <p-radioButton name="radio{{episodeNo}}" [value]="opt.value" [label]="opt.label" [formControlName]="fcn" ></p-radioButton>
+    </div>
+  </div>
+</div>

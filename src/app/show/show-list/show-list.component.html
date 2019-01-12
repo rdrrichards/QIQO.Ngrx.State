@@ -1,14 +1,20 @@
 <p>
   Show List
 </p>
+
+<p-accordion>
+  <p-accordionTab *ngFor="let episode of episodes; let i = index" pDroppable="dd"
+    (onDragEnter)="onDragEnter($event, i)" (onDragLeave)="dragLeave($event)" (onDrop)="dragDrop($event, episode, i)" >
+    <p-header pDraggable="dd" (onDragStart)="dragStart($event, episode, i)" (onDragEnd)="dragEnd($event)">
+      {{episode.episodeName}} ({{i}})
+    </p-header>
+    <app-show [episodeNo]="episode.episodeNo" [episodeName]="episode.episodeName"
+      [options]="options" [form]="showForm"  [fcn]="i" [fan]="options" ></app-show>
+  </p-accordionTab>
+</p-accordion>
+
 <div>
-  <p-accordion>
-    <p-accordionTab *ngFor="let episode of episodes; let i = index" pDroppable="dd"
-      (onDragEnter)="onDragEnter($event, i)" (onDragLeave)="dragLeave($event)" (onDrop)="dragDrop($event, episode, i)" >
-      <p-header pDraggable="dd" (onDragStart)="dragStart($event, episode, i)" (onDragEnd)="dragEnd($event)">
-        {{episode.episodeName}} ({{i}})
-      </p-header>
-      <app-show [episodeNo]="episode.episodeNo" [episodeName]="episode.episodeName" ></app-show>
-    </p-accordionTab>
-  </p-accordion>
+  <pre>
+    {{ showForm.value | json }}
+  </pre>
 </div>

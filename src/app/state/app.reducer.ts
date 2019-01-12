@@ -1,11 +1,11 @@
-import { EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { ThingState, AppState } from './state';
+import { EntityAdapter, createEntityAdapter, EntityState } from '@ngrx/entity';
+import { AppState } from './state';
 import { Thing } from '../models/thing';
 import { ThingActions, ThingActionTypes } from './app.actions';
 
 export const adapter: EntityAdapter<Thing> = createEntityAdapter<Thing>();
 
-export const initialThingState: ThingState = adapter.getInitialState(); // [{ id: '0', name: 'First thing' }]
+export const initialThingState: EntityState<Thing> = adapter.getInitialState(); // [{ id: '0', name: 'First thing' }]
 
 export const initialState: AppState = {
   things: initialThingState
