@@ -71,22 +71,9 @@ export class ShowListComponent implements OnInit {
     this.dragOverItemIndex = null;
   }
   dragDrop(event: DragEvent, episode: Episode, index: number) {
-    // console.log('dragDrop event:episode:index', event, episode, index);
-    const selectedOptions = [];
-    this.formOptions.controls.forEach(c => {
-      if (c.value) {
-        selectedOptions.push({ index: this.formOptions.controls.indexOf(c), value: c.value  });
-      }
-    });
-    // console.log('selectedOptions', selectedOptions);
-    const arrayWas = Object.assign([], this.episodes);
-    // console.log('this.episodes was', arrayWas);
-    // let dropIndex = (this.draggedItemIndex > index) ? index : (index === 0) ? 0 : index - 1;
     this.reorderArray(this.episodes, this.draggedItemIndex, index);
-    this.dragOverItemIndex = null;
-    // this.onReorder.emit(event);
-    // console.log('this.episodes is', this.episodes);
     this.reorderFormArray(this.formOptions, this.draggedItemIndex, index);
+    this.dragOverItemIndex = null;
     event.preventDefault();
   }
   reorderFormArray(formArray: FormArray, from: number, to: number) {
