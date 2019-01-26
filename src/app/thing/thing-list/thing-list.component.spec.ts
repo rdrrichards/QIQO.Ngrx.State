@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ThingListComponent } from './thing-list.component';
+import { ThingComponent } from '../thing/thing.component';
 
 describe('ThingListComponent', () => {
   let component: ThingListComponent;
@@ -8,7 +9,7 @@ describe('ThingListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThingListComponent ]
+      declarations: [ ThingListComponent, ThingComponent ]
     })
     .compileComponents();
   }));
@@ -21,5 +22,13 @@ describe('ThingListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('addThing should return void', () => {
+    expect(component.addThing()).toBeUndefined();
+  });
+
+  it('delThing should return void', () => {
+    expect(component.delThing({ id: '', name: '' })).toBeUndefined();
   });
 });
