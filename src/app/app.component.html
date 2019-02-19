@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<div class="p-grid" style="height: 35px; background-color: darkgrey; padding: 0">
+  Title Bar
+</div>
+
+<div>
+  <div class="p-grid">
+    <div class="p-col-2">
+      <p-sidebar [(visible)]="open"></p-sidebar>
+    </div>
+    <div class="p-col-10">
+      <router-outlet></router-outlet>
+      <button pButton (click)="toggle()" label="Toggle"></button>
+    </div>
+  </div>
+</div>

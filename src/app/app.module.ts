@@ -10,6 +10,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { DragDropModule } from 'primeng/dragdrop';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { SidebarModule } from 'primeng/sidebar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { ShowListComponent } from './show/show-list/show-list.component';
     ButtonModule,
     DragDropModule,
     RadioButtonModule,
+    SidebarModule,
     StoreModule.forRoot({ appState: reducer }),
     StoreDevtoolsModule.instrument({
       name: 'QIQO State Playgroud',
