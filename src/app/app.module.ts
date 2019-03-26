@@ -6,12 +6,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducer } from './state/app.reducer';
 
-import { AccordionModule } from 'primeng/accordion';
-import { ButtonModule } from 'primeng/button';
-import { DragDropModule } from 'primeng/dragdrop';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { SidebarModule } from 'primeng/sidebar';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ThingListComponent } from './thing/thing-list/thing-list.component';
@@ -20,6 +14,7 @@ import { ThingShellComponent } from './thing/thing-shell/thing-shell.component';
 import { environment } from 'src/environments/environment';
 import { ShowComponent } from './show/show/show.component';
 import { ShowListComponent } from './show/show-list/show-list.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,14 +27,10 @@ import { ShowListComponent } from './show/show-list/show-list.component';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     BrowserAnimationsModule,
     FormsModule, ReactiveFormsModule,
     AppRoutingModule,
-    AccordionModule,
-    ButtonModule,
-    DragDropModule,
-    RadioButtonModule,
-    SidebarModule,
     StoreModule.forRoot({ appState: reducer }),
     StoreDevtoolsModule.instrument({
       name: 'QIQO State Playgroud',
