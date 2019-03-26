@@ -85,8 +85,9 @@ describe('ShowListComponent', () => {
 
   it('dragDrop should return void', () => {
     component.episodes = episodes;
-    component.dragOverItemIndex = 1;
-    // expect(component.dragDrop(de, episode, 5)).toBeUndefined();
+    component.dragOverItemIndex = 3;
+    component.draggedItemIndex = 7;
+    expect(component.dragDrop(de, episode, 5)).toBeUndefined();
   });
 
   it('reorderArray should return void', () => {

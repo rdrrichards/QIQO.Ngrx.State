@@ -18,11 +18,11 @@ export enum ThingActionTypes {
   CLEAR_Things = '[Thing] Clear Things',
 }
 
-export class LoadThings implements Action {
-  readonly type = ThingActionTypes.LOAD_Things;
+// export class LoadThings implements Action {
+//   readonly type = ThingActionTypes.LOAD_Things;
 
-  constructor(public payload: { things: Thing[] }) {}
-}
+//   constructor(public payload: { things: Thing[] }) {}
+// }
 
 export class AddThing implements Action {
   readonly type = ThingActionTypes.ADD_Thing;
@@ -30,41 +30,41 @@ export class AddThing implements Action {
   constructor(public payload: { thing: Thing }) {}
 }
 
-export class UpsertThing implements Action {
-  readonly type = ThingActionTypes.UPSERT_Thing;
+// export class UpsertThing implements Action {
+//   readonly type = ThingActionTypes.UPSERT_Thing;
 
-  constructor(public payload: { thing: Thing }) {}
-}
+//   constructor(public payload: { thing: Thing }) {}
+// }
 
-export class AddThings implements Action {
-  readonly type = ThingActionTypes.ADD_Things;
+// export class AddThings implements Action {
+//   readonly type = ThingActionTypes.ADD_Things;
 
-  constructor(public payload: { things: Thing[] }) {}
-}
+//   constructor(public payload: { things: Thing[] }) {}
+// }
 
-export class UpsertThings implements Action {
-  readonly type = ThingActionTypes.UPSERT_Things;
+// export class UpsertThings implements Action {
+//   readonly type = ThingActionTypes.UPSERT_Things;
 
-  constructor(public payload: { things: Thing[] }) {}
-}
+//   constructor(public payload: { things: Thing[] }) {}
+// }
 
-export class UpdateThing implements Action {
-  readonly type = ThingActionTypes.UPDATE_Thing;
+// export class UpdateThing implements Action {
+//   readonly type = ThingActionTypes.UPDATE_Thing;
 
-  constructor(public payload: { thing: Update<Thing> }) {}
-}
+//   constructor(public payload: { thing: Update<Thing> }) {}
+// }
 
-export class UpdateThings implements Action {
-  readonly type = ThingActionTypes.UPDATE_Things;
+// export class UpdateThings implements Action {
+//   readonly type = ThingActionTypes.UPDATE_Things;
 
-  constructor(public payload: { things: Update<Thing>[] }) {}
-}
+//   constructor(public payload: { things: Update<Thing>[] }) {}
+// }
 
-export class MapThings implements Action {
-  readonly type = ThingActionTypes.MAP_Things;
+// export class MapThings implements Action {
+//   readonly type = ThingActionTypes.MAP_Things;
 
-  constructor(public payload: { entityMap: EntityMap<Thing> }) {}
-}
+//   constructor(public payload: { entityMap: EntityMap<Thing> }) {}
+// }
 
 export class DeleteThing implements Action {
   readonly type = ThingActionTypes.DELETE_Thing;
@@ -72,32 +72,33 @@ export class DeleteThing implements Action {
   constructor(public payload: { id: string }) {}
 }
 
-export class DeleteThings implements Action {
-  readonly type = ThingActionTypes.DELETE_Things;
+// export class DeleteThings implements Action {
+//   readonly type = ThingActionTypes.DELETE_Things;
 
-  constructor(public payload: { ids: string[] }) {}
-}
+//   constructor(public payload: { ids: string[] }) {}
+// }
 
-export class DeleteThingsByPredicate implements Action {
-  readonly type = ThingActionTypes.DELETE_Things_BY_PREDICATE;
+// export class DeleteThingsByPredicate implements Action {
+//   readonly type = ThingActionTypes.DELETE_Things_BY_PREDICATE;
 
-  constructor(public payload: { predicate: Predicate<Thing> }) {}
-}
+//   constructor(public payload: { predicate: Predicate<Thing> }) {}
+// }
 
-export class ClearThings implements Action {
-  readonly type = ThingActionTypes.CLEAR_Things;
-}
+// export class ClearThings implements Action {
+//   readonly type = ThingActionTypes.CLEAR_Things;
+// }
 
 export type ThingActions =
-  | LoadThings
+//  | LoadThings
   | AddThing
-  | UpsertThing
-  | AddThings
-  | UpsertThings
-  | UpdateThing
-  | UpdateThings
-  | MapThings
+  // | UpsertThing
+  // | AddThings
+  // | UpsertThings
+  // | UpdateThing
+  // | UpdateThings
+  // | MapThings
   | DeleteThing
-  | DeleteThings
-  | DeleteThingsByPredicate
-  | ClearThings;
+  // | DeleteThings
+  // | DeleteThingsByPredicate
+  // | ClearThings
+  ;

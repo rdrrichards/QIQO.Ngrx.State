@@ -18,49 +18,49 @@ export function reducer(state = initialState, action: ThingActions): AppState {
       return { things: adapter.addOne(action.payload.thing, state.things) };
     }
 
-    case ThingActionTypes.UPSERT_Thing: {
-      return { things: adapter.upsertOne(action.payload.thing, state.things) };
-    }
+    // case ThingActionTypes.UPSERT_Thing: {
+    //   return { things: adapter.upsertOne(action.payload.thing, state.things) };
+    // }
 
-    case ThingActionTypes.ADD_Things: {
-      return { things: adapter.addMany(action.payload.things, state.things) };
-    }
+    // case ThingActionTypes.ADD_Things: {
+    //   return { things: adapter.addMany(action.payload.things, state.things) };
+    // }
 
-    case ThingActionTypes.UPSERT_Things: {
-      return { things: adapter.upsertMany(action.payload.things, state.things) };
-    }
+    // case ThingActionTypes.UPSERT_Things: {
+    //   return { things: adapter.upsertMany(action.payload.things, state.things) };
+    // }
 
-    case ThingActionTypes.UPDATE_Thing: {
-      return { things: adapter.updateOne(action.payload.thing, state.things) };
-    }
+    // case ThingActionTypes.UPDATE_Thing: {
+    //   return { things: adapter.updateOne(action.payload.thing, state.things) };
+    // }
 
-    case ThingActionTypes.UPDATE_Things: {
-      return { things: adapter.updateMany(action.payload.things, state.things) };
-    }
+    // case ThingActionTypes.UPDATE_Things: {
+    //   return { things: adapter.updateMany(action.payload.things, state.things) };
+    // }
 
-    case ThingActionTypes.MAP_Things: {
-      return { things: adapter.map(action.payload.entityMap, state.things) };
-    }
+    // case ThingActionTypes.MAP_Things: {
+    //   return { things: adapter.map(action.payload.entityMap, state.things) };
+    // }
 
     case ThingActionTypes.DELETE_Thing: {
       return { things: adapter.removeOne(action.payload.id, state.things) };
     }
 
-    case ThingActionTypes.DELETE_Things: {
-      return { things: adapter.removeMany(action.payload.ids, state.things) };
-    }
+    // case ThingActionTypes.DELETE_Things: {
+    //   return { things: adapter.removeMany(action.payload.ids, state.things) };
+    // }
 
-    case ThingActionTypes.DELETE_Things_BY_PREDICATE: {
-      return { things: adapter.removeMany(action.payload.predicate, state.things) };
-    }
+    // case ThingActionTypes.DELETE_Things_BY_PREDICATE: {
+    //   return { things: adapter.removeMany(action.payload.predicate, state.things) };
+    // }
 
-    case ThingActionTypes.LOAD_Things: {
-      return { things: adapter.addAll(action.payload.things, state.things) };
-    }
+    // case ThingActionTypes.LOAD_Things: {
+    //   return { things: adapter.addAll(action.payload.things, state.things) };
+    // }
 
-    case ThingActionTypes.CLEAR_Things: {
-      return { things: adapter.removeAll({ ...state.things }) };
-    }
+    // case ThingActionTypes.CLEAR_Things: {
+    //   return { things: adapter.removeAll({ ...state.things }) };
+    // }
 
     default: {
       return state;
