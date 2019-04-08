@@ -27,7 +27,8 @@ export class ThingShellComponent implements OnInit {
   addThing() {
     console.log('Adding new thing');
     const newId = new Date().toISOString();
-    this.appStore.dispatch(new appActions.AddThing( { thing: { id: newId, name: `New Thing: ${newId}` }}));
+    // this.appStore.dispatch(new appActions.AddThing( { thing: { id: newId, name: `New Thing: ${newId}` }}));
+    this.appStore.dispatch(appActions.addThing( { thing: { id: newId, name: `New Thing: ${newId}` }}));
   }
   delThing(thing: Thing) {
     this.appStore.dispatch(new appActions.DeleteThing({ id: thing.id }));

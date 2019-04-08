@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { Action, createAction, props } from '@ngrx/store';
 import { Update, EntityMap, Predicate } from '@ngrx/entity';
 
 import { Thing } from '../models/thing';
@@ -24,11 +24,16 @@ export enum ThingActionTypes {
 //   constructor(public payload: { things: Thing[] }) {}
 // }
 
-export class AddThing implements Action {
-  readonly type = ThingActionTypes.ADD_Thing;
+export const addThing = createAction(
+  '[Thing] Add Thing',
+  props<{ thing: Thing }>()
+);
 
-  constructor(public payload: { thing: Thing }) {}
-}
+// export class AddThing implements Action {
+//   readonly type = ThingActionTypes.ADD_Thing;
+
+//   constructor(public payload: { thing: Thing }) {}
+// }
 
 // export class UpsertThing implements Action {
 //   readonly type = ThingActionTypes.UPSERT_Thing;
@@ -90,7 +95,7 @@ export class DeleteThing implements Action {
 
 export type ThingActions =
 //  | LoadThings
-  | AddThing
+  // | AddThing
   // | UpsertThing
   // | AddThings
   // | UpsertThings

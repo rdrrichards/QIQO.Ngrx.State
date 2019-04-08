@@ -1,7 +1,7 @@
 import { EntityAdapter, createEntityAdapter, EntityState } from '@ngrx/entity';
 import { AppState } from './state';
 import { Thing } from '../models/thing';
-import { ThingActions, ThingActionTypes } from './app.actions';
+import { ThingActions, ThingActionTypes, addThing } from './app.actions';
 
 export const adapter: EntityAdapter<Thing> = createEntityAdapter<Thing>();
 
@@ -11,11 +11,12 @@ export const initialState: AppState = {
   things: initialThingState
 };
 
-export function reducer(state = initialState, action: ThingActions): AppState {
+export function reducer(state = initialState, action): AppState {
+  console.log(state, action);
   switch (action.type) {
-    case ThingActionTypes.ADD_Thing: {
-      console.log('adding this: ', action.payload.thing);
-      return { things: adapter.addOne(action.payload.thing, state.things) };
+    case addThing.type: {
+      console.log('adding this: ', action.thing);
+      return { things: adapter.addOne(action.thing, state.things) };
     }
 
     // case ThingActionTypes.UPSERT_Thing: {
