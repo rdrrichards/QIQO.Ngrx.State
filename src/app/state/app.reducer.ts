@@ -12,7 +12,7 @@ export const initialState: AppState = {
 };
 
 export function reducer(state = initialState, action): AppState {
-  console.log(state, action);
+  // console.log(state, action);
   switch (action.type) {
     case addThing.type: {
       console.log('adding this: ', action.thing);
