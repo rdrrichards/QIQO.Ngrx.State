@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 })
 export class ThingShellComponent implements OnInit {
   things$: Observable<Thing[]>;
+  brands: any[] = ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo', 'VW'];
+  brand = '';
   constructor(private appStore: Store<AppState>, private router: Router) { }
 
   ngOnInit() {
@@ -35,5 +37,9 @@ export class ThingShellComponent implements OnInit {
   }
   viewShows() {
     this.router.navigate(['/shows']);
+  }
+  search(event) {
+    console.log(event.query);
+    this.brands = [...this.brands];
   }
 }

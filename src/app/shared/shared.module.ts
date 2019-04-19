@@ -6,6 +6,8 @@ import { ButtonModule } from 'primeng/button';
 import { DragDropModule } from 'primeng/dragdrop';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SidebarModule } from 'primeng/sidebar';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+
 
 @NgModule({
   declarations: [],
@@ -16,6 +18,7 @@ import { SidebarModule } from 'primeng/sidebar';
     DragDropModule,
     RadioButtonModule,
     SidebarModule,
+    AutoCompleteModule
   ],
   exports: [
     AccordionModule,
@@ -23,6 +26,7 @@ import { SidebarModule } from 'primeng/sidebar';
     DragDropModule,
     RadioButtonModule,
     SidebarModule,
+    AutoCompleteModule
   ]
 })
 export class SharedModule { }
