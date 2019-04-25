@@ -7,6 +7,8 @@ import { ThingListComponent } from '../thing-list/thing-list.component';
 import { ThingComponent } from '../thing/thing.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from '../../state/app.reducer';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('ThingShellComponent', () => {
   let component: ThingShellComponent;
@@ -17,7 +19,8 @@ describe('ThingShellComponent', () => {
       declarations: [ ThingShellComponent, ThingListComponent, ThingComponent ],
       imports: [
         RouterTestingModule, BrowserAnimationsModule,
-        StoreModule.forRoot({ appState: reducer })
+        StoreModule.forRoot({ appState: reducer }),
+        FormsModule, SharedModule
       ]
     })
     .compileComponents();
