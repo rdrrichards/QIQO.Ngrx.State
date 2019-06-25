@@ -1,3 +1,4 @@
+CALL git commit -am "pre update commit"
 CALL ng update @angular/cli
 CALL git commit -am "cli update to latest"
 CALL ng update @angular/core
