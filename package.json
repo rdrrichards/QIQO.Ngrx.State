@@ -22,7 +22,6 @@
     "@ngrx/entity": "^8.0.1",
     "@ngrx/store": "^8.0.1",
     "@ngrx/store-devtools": "^8.0.1",
-    "core-js": "^2.6.5",
     "primeflex": "^1.0.0-rc.1",
     "primeicons": "^1.0.0",
     "primeng": "^8.0.0",
@@ -48,8 +47,8 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~6.0.0",
-    "ts-node": "~8.2.0",
-    "tslint": "~5.17.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
     "typescript": "~3.4.5"
   }
 }
