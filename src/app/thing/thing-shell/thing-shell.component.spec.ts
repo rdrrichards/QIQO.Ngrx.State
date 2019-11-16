@@ -36,15 +36,15 @@ describe('ThingShellComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('addThing should return void', () => {
-    expect(component.addThing()).toBeUndefined();
-  });
+  // it('addThing should return void', () => {
+  //   expect(component.addThing()).toBeUndefined();
+  // });
 
-  it('delThing should return void', () => {
-    expect(component.delThing({ id: '', name: '' })).toBeUndefined();
-  });
+  // it('delThing should return void', () => {
+  //   expect(component.delThing({ id: '', name: '' })).toBeUndefined();
+  // });
 
-  it('viewShows should return void', () => {
-    expect(component.viewShows()).toBeUndefined();
-  });
+  // it('viewShows should return void', () => {
+  //   expect(component.viewShows()).toBeUndefined();
+  // });
 });
