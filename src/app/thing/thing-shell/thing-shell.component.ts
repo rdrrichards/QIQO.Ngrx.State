@@ -19,7 +19,7 @@ export class ThingShellComponent implements OnInit {
   constructor(private appStore: Store<AppState>, private router: Router) { }
 
   ngOnInit() {
-    this.appStore.select('appState').subscribe((es: AppState) => {
+    this.appStore.select('things').subscribe((es: any) => {
       console.log('things', es);
       this.things$ = of(appStuff.selectAllThings(es.things));
       // this.things$ = this.appStore.pipe(select( appStuff.selectAllThings(es.things) ));
