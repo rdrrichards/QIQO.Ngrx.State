@@ -7,7 +7,7 @@ import { Thing } from 'src/app/models/thing';
   styleUrls: ['./thing-list.component.css']
 })
 export class ThingListComponent implements OnInit {
-  @Input() things: Thing[];
+  @Input() things: Thing[] = [];
   @Output() add: EventEmitter<null> = new EventEmitter<null>();
   @Output() delete: EventEmitter<Thing> = new EventEmitter<Thing>();
   constructor() { }
