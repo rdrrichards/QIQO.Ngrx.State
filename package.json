@@ -22,7 +22,7 @@
     "@ngrx/entity": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@ngrx/store-devtools": "^10.0.0",
-    "primeflex": "^2.0.0-rc.1",
+    "primeflex": "^2.0.0",
     "primeicons": "^4.0.0",
     "primeng": "^10.0.0-rc.3",
     "rxjs": "^6.5.4",
