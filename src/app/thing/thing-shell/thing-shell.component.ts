@@ -21,7 +21,7 @@ export class ThingShellComponent implements OnInit {
   ngOnInit() {
     this.appStore.select('things').subscribe((es: any) => {
       console.log('things', es);
-      this.things$ = of(appStuff.selectAllThings(es.things));
+      this.things$ = of(appStuff.selectAllThings(es?.things));
       // this.things$ = this.appStore.pipe(select( appStuff.selectAllThings(es.things) ));
     });
   }
