@@ -10,7 +10,7 @@ import { FormGroup, FormArray, FormControl, FormBuilder } from '@angular/forms';
 export class ShowComponent implements OnInit {
   @Input() form: FormGroup;
   @Input() fcn: number;
-  @Input() fan: string;
+  @Input() fan: ListOption[];
   @Input() episodeNo: number;
   @Input() episodeName: string;
   @Input() options: ListOption[] = [];
