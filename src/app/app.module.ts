@@ -8,9 +8,6 @@ import { reducer } from './state/app.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ThingListComponent } from './thing/thing-list/thing-list.component';
-import { ThingComponent } from './thing/thing/thing.component';
-import { ThingShellComponent } from './thing/thing-shell/thing-shell.component';
 import { environment } from 'src/environments/environment';
 import { ShowComponent } from './show/show/show.component';
 import { ShowListComponent } from './show/show-list/show-list.component';
@@ -19,9 +16,6 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ThingListComponent,
-    ThingComponent,
-    ThingShellComponent,
     ShowComponent,
     ShowListComponent
   ],

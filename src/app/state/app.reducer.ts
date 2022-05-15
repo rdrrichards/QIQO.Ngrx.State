@@ -1,11 +1,10 @@
 import { EntityAdapter, createEntityAdapter, EntityState } from '@ngrx/entity';
 import { AppState } from './state';
-import { Thing } from '../models/thing';
-import { ThingActions, ThingActionTypes, addThing } from './app.actions';
+import { ThingActions, ThingActionTypes } from './app.actions';
 
-export const adapter: EntityAdapter<Thing> = createEntityAdapter<Thing>();
+export const adapter: EntityAdapter<any> = createEntityAdapter<any>();
 
-export const initialThingState: EntityState<Thing> = adapter.getInitialState(); // [{ id: '0', name: 'First thing' }]
+export const initialThingState: EntityState<any> = adapter.getInitialState(); // [{ id: '0', name: 'First thing' }]
 
 export const initialState: AppState = {
   things: initialThingState
@@ -14,10 +13,10 @@ export const initialState: AppState = {
 export function reducer(state = initialState, action): AppState {
   // console.log(state, action);
   switch (action.type) {
-    case addThing.type: {
-      console.log('adding this: ', action.thing);
-      return { things: adapter.addOne(action.thing, state.things) };
-    }
+    // case addThing.type: {
+    //   console.log('adding this: ', action.thing);
+    //   return { things: adapter.addOne(action.thing, state.things) };
+    // }
 
     // case ThingActionTypes.UPSERT_Thing: {
     //   return { things: adapter.upsertOne(action.payload.thing, state.things) };

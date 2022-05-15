@@ -1,7 +1,6 @@
 import { Action, createAction, props } from '@ngrx/store';
 import { Update, EntityMap, Predicate } from '@ngrx/entity';
 
-import { Thing } from '../models/thing';
 
 export enum ThingActionTypes {
   LOAD_Things = '[Thing] Load Things',
@@ -24,10 +23,6 @@ export enum ThingActionTypes {
 //   constructor(public payload: { things: Thing[] }) {}
 // }
 
-export const addThing = createAction(
-  '[Thing] Add Thing',
-  props<{ thing: Thing }>()
-);
 
 // export class AddThing implements Action {
 //   readonly type = ThingActionTypes.ADD_Thing;
