@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShowListComponent } from './show-list.component';
 import { AccordionModule } from 'primeng/accordion';
 import { ShowComponent } from '../show/show.component';
-import { ReactiveFormsModule, FormArray, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormArray, UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { Episode } from '../episode';
 
@@ -43,13 +43,13 @@ describe('ShowListComponent', () => {
     episodes.push({ episodeNo: 13, episodeName: 'Heart of Gold' });
     episodes.push({ episodeNo: 14, episodeName: 'Objects in Space' });
 
-    const fa =  new FormArray([]);
+    const fa =  new UntypedFormArray([]);
     episodes.forEach(o => {
-      fa.push(new FormControl(''));
+      fa.push(new UntypedFormControl(''));
     });
 
     component = fixture.componentInstance;
-    component.showForm = new FormGroup({ options: fa });
+    component.showForm = new UntypedFormGroup({ options: fa });
     fixture.detectChanges();
   });
 
@@ -95,7 +95,7 @@ describe('ShowListComponent', () => {
   });
 
   it('reorderFormArray should return void', () => {
-    const fa = component.showForm.get('options') as FormArray;
+    const fa = component.showForm.get('options') as UntypedFormArray;
     expect(component.reorderFormArray(fa, 1, 8)).toBeUndefined();
   });
 });

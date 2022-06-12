@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ShowComponent } from './show.component';
-import { FormsModule, ReactiveFormsModule, FormGroup, FormArray } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormGroup, UntypedFormArray } from '@angular/forms';
 import { RadioButtonModule } from 'primeng/radiobutton';
 
 describe('ShowComponent', () => {
@@ -19,7 +19,7 @@ describe('ShowComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ShowComponent);
     component = fixture.componentInstance;
-    component.form = new FormGroup({ options: new FormArray([]) });
+    component.form = new UntypedFormGroup({ options: new UntypedFormArray([]) });
     fixture.detectChanges();
   });
 

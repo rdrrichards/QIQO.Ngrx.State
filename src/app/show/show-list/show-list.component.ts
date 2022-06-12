@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Episode } from '../episode';
 import { ListOption } from '../list-option';
-import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, UntypedFormArray, UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-show-list',
@@ -9,13 +9,13 @@ import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
   styleUrls: ['./show-list.component.css']
 })
 export class ShowListComponent implements OnInit {
-  showForm: FormGroup = new FormGroup({});
+  showForm: UntypedFormGroup = new UntypedFormGroup({});
   episodes: Episode[] = [];
   options: ListOption[] = [];
   draggedItemIndex: number;
   dragOverItemIndex: number;
   dragging = false;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.episodes.push({ episodeNo: 1, episodeName: 'Serentiy' });
     this.episodes.push({ episodeNo: 2, episodeName: 'The Train Job' });
     this.episodes.push({ episodeNo: 3, episodeName: 'Bushwhacked' });
@@ -40,7 +40,7 @@ export class ShowListComponent implements OnInit {
       options: this.buildFromArray()
     });
   }
-  get formOptions() { return this.showForm.get('options') as FormArray; }
+  get formOptions() { return this.showForm.get('options') as UntypedFormArray; }
   ngOnInit() {
     // console.log('showForm', this.showForm);
   }
@@ -76,8 +76,8 @@ export class ShowListComponent implements OnInit {
     this.dragOverItemIndex = null;
     event.preventDefault();
   }
-  reorderFormArray(formArray: FormArray, from: number, to: number) {
-    const absControl = formArray.controls[from] as FormControl;
+  reorderFormArray(formArray: UntypedFormArray, from: number, to: number) {
+    const absControl = formArray.controls[from] as UntypedFormControl;
     formArray.removeAt(from);
     formArray.insert(to, absControl);
   }
