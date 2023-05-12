@@ -24,7 +24,7 @@
     "@ngrx/store": "^15.4.0",
     "primeflex": "^3.2.1",
     "primeicons": "^6.0.1",
-    "primeng": "^15.1.1",
+    "primeng": "^16.0.0-rc.1",
     "rxjs": "^7.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.13.0"
