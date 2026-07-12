@@ -15,7 +15,7 @@
     "@angular/cdk": "^18.0.0",
     "@angular/common": "18.0.0",
     "@angular/compiler": "20.3.25",
-    "@angular/core": "19.2.20",
+    "@angular/core": "20.3.25",
     "@angular/forms": "18.0.0",
     "@angular/platform-browser": "18.0.0",
     "@angular/platform-browser-dynamic": "18.0.0",
